@@ -85,12 +85,12 @@ binary_sensor:
       - timing:
         - ON for at most 1s
         - OFF for at least 0.2s
-      then:
-        - switch.toggle: relay
-        - timing:
-          - ON for at least 4s
-      then:
-        - button.press: Reset
+        then:
+          - switch.toggle: relay
+      - timing:
+        - ON for at least 4s
+        then:
+          - button.press: Reset
 
 sensor:
   - platform: uptime
